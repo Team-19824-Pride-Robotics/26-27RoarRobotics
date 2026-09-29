@@ -66,15 +66,15 @@ public class ShooterSt extends LinearOpMode {
                 
             }
             
-            //while gamepad1.aWasPressed(true){
-                //intakespeed =2000;
-            //}
-
+            /*while gamepad1.aWasPressed(true){
+                intakespeed =2000;
+            }*/
+            
             //Intake if a is pressed
             if(gamepad1.aWasPressed(true)) {
                 intakespeed = 2000;
             }
-            else{
+            elif(gamepad1.aWasReleased(true)){
                 intakespeed=0;
             }
             
