@@ -39,7 +39,7 @@ public class ShooterSt extends LinearOpMode {
     double flyspeed1 = 0;
     double flyspeed2 = 0;
     
-    double intakespeed = 0;
+    double intakespeed = 0; //Intake speed
 
 
 
@@ -69,7 +69,6 @@ public class ShooterSt extends LinearOpMode {
         // run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
         
-
             //Move if the right trigger is being held
             if (gamepad1.right_trigger > .1 ) {
                 
@@ -84,6 +83,10 @@ public class ShooterSt extends LinearOpMode {
                 
             }
             
+            //while gamepad1.aWasPressed(true){
+                //intakespeed =2000;
+            //}
+
             //Intake if a is pressed
             if(gamepad1.aWasPressed(true)) {
                 intakespeed = 2000;
@@ -92,14 +95,15 @@ public class ShooterSt extends LinearOpMode {
                 intakespeed=0;
             }
             
-            //Sett the motors strength to the flyspeed
+            //Set the motors strength to the flyspeed
             fly1.setPower(flyspeed1);
             fly2.setPower(flyspeed2);
             
             // Add data to the screen
             telemetry.addData("Status", "Running");
-            telemetry.addData("velocity1", flyspeed1);
-            telemetry.addData("velocity2", flyspeed2);
+            telemetry.addData("velocity1: ", flyspeed1);
+            telemetry.addData("velocity2: ", flyspeed2);
+            telemetry.addData("Intake motor: ", intakespeed);
             telemetry.update();
 
         }
