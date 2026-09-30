@@ -15,13 +15,12 @@ public class ShooterSt extends LinearOpMode {
     private DcMotor fly1 = null; 
     private DcMotor fly2 = null; 
     private DcMotor intakeMotor = null;
+    private  DcMotor transfer =null;
 
-    private Transfer
-    
     public double lanchingpower = 2000;//Speed of outake
     double flyspeed1 = 0;
     double flyspeed2 = 0;
-    
+    double transferspeed = 0;
     double intakespeed = 2000; //Intake speed
 
 
@@ -33,8 +32,10 @@ public class ShooterSt extends LinearOpMode {
         // Congiguring motor's
         fly1 = hardwareMap.get(DcMotor.class, "fly1"); //changes by flyspeed1 
         fly2 = hardwareMap.get(DcMotor.class, "fly2"); //changes by flyspeed2
-        
+
         intakeMotor = hardwareMap.get(DcMotor.class, "intakeMotor");
+
+        transfer = hardwareMap.get(DcMotor.class, "Transfer")
         
         fly1.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER); //Reset encoder
         fly1.setMode(DcMotor.RunMode.RUN_USING_ENCODER); 
@@ -45,6 +46,11 @@ public class ShooterSt extends LinearOpMode {
         
         intakeMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         intakeMotot.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+        transfer.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        transer.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+
 
         telemetry.addData("Status", "Initialized");
         telemetry.update();
@@ -81,7 +87,7 @@ public class ShooterSt extends LinearOpMode {
             fly2.setPower(flyspeed2);
             
             // Add data to the screen
-            telemetry.addData("Status", "Running");
+            telemetry.addData("Status: ", "Running");
             telemetry.addData("velocity1: ", flyspeed1);
             telemetry.addData("velocity2: ", flyspeed2);
             telemetry.addData("Intake motor: ", intakespeed);
