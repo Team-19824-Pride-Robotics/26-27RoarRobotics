@@ -20,7 +20,7 @@ public class ShooterSt extends LinearOpMode {
     double flyspeed1 = 0;
     double flyspeed2 = 0;
     
-    double intakespeed = 0; //Intake speed
+    double intakespeed = 2000; //Intake speed
 
 
 
@@ -63,14 +63,10 @@ public class ShooterSt extends LinearOpMode {
                 flyspeed2=0;
                 
             }
-            
-            /*while gamepad1.aWasPressed(true){
-                intakespeed =2000;
-            }*/
-            
+
             //Intake if a is pressed
             if(gamepad1.aWasPressed(true)) {
-                intakespeed = 2000;
+                intakeMotor=intakespeed;
             }
             elif(gamepad1.aWasReleased(true)){
                 intakespeed=0;
