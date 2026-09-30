@@ -26,9 +26,10 @@ public class Autonomous extends LinearOpMode {
        waitForStart();
        runtime.reset(); //reset runtime
 
-       while (opModeIsActive() && runtime.seconds() <30.0){ //Run for 30 seconds
+       while (opModeIsActive() && runtime.seconds() <25.0){ //Run for 25 seconds * time is temporary
            wheelMotor = wheelSpeed;
        }
+       while
    }
 
 
