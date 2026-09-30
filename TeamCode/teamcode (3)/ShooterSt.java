@@ -15,12 +15,16 @@ public class ShooterSt extends LinearOpMode {
     private DcMotor fly1 = null; 
     private DcMotor fly2 = null; 
     private DcMotor intakeMotor = null;
+
+    private Transfer
     
     public double lanchingpower = 2000;//Speed of outake
     double flyspeed1 = 0;
     double flyspeed2 = 0;
     
     double intakespeed = 2000; //Intake speed
+
+
 
 
 
